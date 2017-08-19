@@ -1,0 +1,155 @@
+<center style="color:blue;font:bold;font-size:700;"><h1>Signup Here</h1></center>
+<div class="row">
+  <div class="col-sm-4">
+
+  </div>
+  <div class="col-sm-4">
+  <form name="registrationform" class="registrationform">
+    <fieldset class="form-group">
+
+      <div><input type="text" class="form-control" id="firstname" name="firstname" ng-focus="fnamefocus=true" ng-blur="fnamefocus=false" placeholder="First Name" ng-model="regCtrl.account.firstName" required pattern="[a-z]{2,10}"></div>
+      <div ng-show="fnamefocus && !registrationform.firstname.$error.pattern && registrationform.firstname.$error.required">
+        <p class="alert alert-info" style="color:black"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;case sensitive: Enter only small characters</p>
+      </div>
+      <div ng-show="registrationform.firstname.$error.pattern && fnamefocus">
+        <p class="alert alert-warning" style="color:brown"><span class="glyphicon glyphicon-warning-sign"></span>&nbsp;Only small alphabets are allowed and min 2 and max 10 characters</p>
+      </div>
+      <div ng-show="registrationform.firstname.$error.pattern && !fnamefocus && registrationform.firstname.$touched">
+        <p class="alert alert-danger" style="color:brown"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;Only small alphabets are allowed and min 2 and max 10 characters</p>
+      </div>
+
+    </fieldset>
+    <fieldset class="form-group">
+
+      <input type="text" class="form-control" id="lastname" name="lastname" ng-focus="lnamefocus=true" ng-blur="lnamefocus=false" placeholder="Last Name" ng-model="regCtrl.account.lastName" required pattern="[a-z]{2,10}">
+      <div ng-show="lnamefocus && !registrationform.lastname.$error.pattern && registrationform.lastname.$error.required">
+        <p class="alert alert-info" style="color:black"><span class="glyphicon glyphicon glyphicon-info-sign"></span>&nbsp;case sensitive: Enter only small characters</p>
+      </div>
+      <div ng-show="registrationform.lastname.$error.pattern && lnamefocus">
+        <p class="alert alert-warning" style="color:brown"><span class="glyphicon glyphicon-warning-sign"></span>&nbsp;Only small alphabets are allowed and min 2 and max 10 characters</p>
+      </div>
+      <div ng-show="registrationform.lastname.$error.pattern && !lnamefocus && registrationform.lastname.$touched">
+        <p class="alert alert-danger" style="color:brown"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;Only small alphabets are allowed and min 2 and max 10 characters</p>
+      </div>
+    </fieldset>
+    <fieldset class="form-group">
+
+      <input type="email" class="form-control" id="email" placeholder="Email" name="email" ng-focus="emailfocus=true" ng-blur="emailfocus=false" ng-model="regCtrl.account.email" required pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$">
+      <!-- <div ng-show="emailfocus && !registrationform.email.$error.pattern">
+        <p class="alert alert-info" style="color:black"><span class="glyphicon glyphicon glyphicon-info-sign"></span>&nbsp;Enter a valid email</p>
+      </div> -->
+      <div ng-show="registrationform.email.$error.pattern && emailfocus">
+        <p class="alert alert-warning" style="color:brown"><span class="glyphicon glyphicon-warning-sign"></span>&nbsp;Enter a valid email</p>
+      </div>
+      <div ng-show="registrationform.email.$error.pattern && !emailfocus && registrationform.email.$touched">
+        <p class="alert alert-danger" style="color:brown"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;Enter a valid email</p>
+      </div>
+      <div ng-show="registrationform.email.$touched && !emailfocus && registrationform.email.$error.required">
+        <p class="alert alert-danger" style="color:brown"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;Enter Email</p>
+      </div>
+    </fieldset>
+    <fieldset class="form-group">
+    <input type="text" name="mobilenumber" id="mobile" placeholder="Mobile" ng-focus="mobilenumberfocus=true" ng-model="regCtrl.account.mobile" ng-blur="mobilenumberfocus=false" required pattern="[0-9]{10}" class="form-control">
+
+       <div ng-show="mobilenumberfocus && !registrationform.mobilenumber.$error.pattern && registrationform.mobilenumber.$error.required">
+        <p class="alert alert-info" style="color:black"><span class="glyphicon glyphicon glyphicon-info-sign"></span>&nbsp;Exampe: 9494216610</p>
+      </div>
+      <div ng-show="registrationform.mobilenumber.$error.pattern && mobilenumberfocus">
+        <p class="alert alert-warning" style="color:brown"><span class="glyphicon glyphicon-warning-sign"></span>&nbsp;Enter a valid mobile number<p>
+      </div>
+      <div ng-show="registrationform.mobilenumber.$error.pattern && !mobilenumberfocus && registrationform.mobilenumber.$touched">
+        <p class="alert alert-danger" style="color:brown"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;Enter a valid Mobile Number</p>
+      </div>
+      <div ng-show="registrationform.mobilenumber.$touched && !mobilenumberfocus && registrationform.mobilenumber.$error.required">
+        <p class="alert alert-danger" style="color:brown"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;Enter Mobile Number</p>
+      </div>
+    </fieldset>
+    <fieldset class="form-group">
+
+      <input type="text" class="form-control" name="username" ng-model="regCtrl.account.username" ng-focus="usernamefocus=true" ng-blur="usernamefocus=false" id="username" placeholder="Username" required pattern="[a-z]{8,}">
+
+             <div ng-show="usernamefocus && !registrationform.username.$error.pattern && registrationform.username.$error.required">
+              <p class="alert alert-info" style="color:black"><span class="glyphicon glyphicon glyphicon-info-sign"></span>&nbsp;case sensitive: Enter only small alphabet</p>
+            </div>
+            <div ng-show="registrationform.username.$error.pattern && usernamefocus">
+              <p class="alert alert-warning" style="color:brown"><span class="glyphicon glyphicon-warning-sign"></span>&nbsp;Small and min 8 character of alphabet<p>
+            </div>
+            <div ng-show="registrationform.username.$error.pattern && !usernamefocus && registrationform.username.$touched">
+              <p class="alert alert-danger" style="color:brown"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;Small and min 8 character of alphabet</p>
+            </div>
+            <div ng-show="registrationform.username.$touched && !usernamefocus && registrationform.username.$error.required">
+              <p class="alert alert-danger" style="color:brown"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;Enter Username</p>
+            </div>
+    </fieldset>
+    <fieldset class="form-group">
+
+      <input type="password" class="form-control" name="password" id="password" placeholder="Password" ng-model="regCtrl.account.password" ng-focus="passwordfocus=true" ng-blur="passwordfocus=false" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,10}">
+      <div ng-show="passwordfocus && !registrationform.password.$error.pattern && registrationform.password.$error.required">
+       <ul class="alert alert-info" style="color:black"><span class="glyphicon glyphicon glyphicon-info-sign"></span>&nbsp;<li>Min 8 characters</li>
+       <li>Min one small alphabet</li>
+     <li>Min one capital alphabet</li>
+   <li>Min one special character</li>
+ <li>Min one digit</li></ul>
+     </div>
+     <div ng-show="registrationform.password.$error.pattern && passwordfocus">
+       <ul class="alert alert-warning" style="color:brown"><span class="glyphicon glyphicon-warning-sign"></span>&nbsp;
+         <li>Min 8 characters</li>
+       <li>Min one small alphabet</li>
+     <li>Min one capital alphabet</li>
+   <li>Min one special character</li>
+ <li>Min one digit</li><ul>
+     </div>
+     <div ng-show="registrationform.password.$error.pattern && !passwordfocus && registrationform.password.$touched">
+       <ul class="alert alert-danger" style="color:brown"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;
+         <li>Min 8 characters</li>
+        <li>Min one small alphabet</li>
+      <li>Min one capital alphabet</li>
+    <li>Min one special character</li>
+  <li>Min one digit</li><ul>
+     </div>
+     <div ng-show="registrationform.password.$touched && !passwordfocus && registrationform.password.$error.required">
+       <p class="alert alert-danger" style="color:brown"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;Enter Username</p>
+     </div>
+    </fieldset>
+    <fieldset class="form-group">
+
+      <input type="password" class="form-control" id="conformpassword" name="conformpassword" ng-model="regCtrl.account.cpassword"  placeholder="Conform Password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,10}">
+      <div ng-show="passwordfocus && !registrationform.password.$error.pattern && registrationform.password.$error.required">
+       <ul class="alert alert-info" style="color:black"><span class="glyphicon glyphicon glyphicon-info-sign"></span>&nbsp;<li>Min 8 characters</li>
+       <li>Min one small alphabet</li>
+     <li>Min one capital alphabet</li>
+   <li>Min one special character</li>
+ <li>Min one digit</li></ul>
+     </div>
+     <div ng-show="registrationform.password.$error.pattern && passwordfocus">
+       <ul class="alert alert-warning" style="color:brown"><span class="glyphicon glyphicon-warning-sign"></span>&nbsp;
+         <li>Min 8 characters</li>
+       <li>Min one small alphabet</li>
+     <li>Min one capital alphabet</li>
+   <li>Min one special character</li>
+ <li>Min one digit</li><ul>
+     </div>
+     <div ng-show="registrationform.password.$error.pattern && !passwordfocus && registrationform.password.$touched">
+       <ul class="alert alert-danger" style="color:brown"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;
+         <li>Min 8 characters</li>
+        <li>Min one small alphabet</li>
+      <li>Min one capital alphabet</li>
+    <li>Min one special character</li>
+  <li>Min one digit</li><ul>
+     </div>
+     <div ng-show="registrationform.password.$touched && !passwordfocus && registrationform.password.$error.required">
+       <p class="alert alert-danger" style="color:brown"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;Enter Username</p>
+     </div>
+    </fieldset>
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Sign Up</button>
+  </form>
+  <center>
+    <div style="margin-top:10px;">
+    <a href="#!/"><button type="button" class="btn btn-primary btn-lg btn-block" style="background-color:green">Login</button></a>
+  </div>
+  </center>
+</div>
+  <div class="col-sm-4">
+
+  </div>
+</div>
