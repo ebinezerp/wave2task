@@ -4,7 +4,7 @@
 
   </div>
   <div class="col-sm-4">
-  <form name="registrationform" class="registrationform">
+  <form name="registrationform" class="registrationform" novalidate ng-submit="registrationform.$valid && regCtrl.register()">
     <fieldset class="form-group">
 
       <div><input type="text" class="form-control" id="firstname" name="firstname" ng-focus="fnamefocus=true" ng-blur="fnamefocus=false" placeholder="First Name" ng-model="regCtrl.account.firstName" required pattern="[a-z]{2,10}"></div>
@@ -113,33 +113,10 @@
     </fieldset>
     <fieldset class="form-group">
 
-      <input type="password" class="form-control" id="conformpassword" name="conformpassword" ng-model="regCtrl.account.cpassword"  placeholder="Conform Password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,10}">
-      <div ng-show="passwordfocus && !registrationform.password.$error.pattern && registrationform.password.$error.required">
-       <ul class="alert alert-info" style="color:black"><span class="glyphicon glyphicon glyphicon-info-sign"></span>&nbsp;<li>Min 8 characters</li>
-       <li>Min one small alphabet</li>
-     <li>Min one capital alphabet</li>
-   <li>Min one special character</li>
- <li>Min one digit</li></ul>
-     </div>
-     <div ng-show="registrationform.password.$error.pattern && passwordfocus">
-       <ul class="alert alert-warning" style="color:brown"><span class="glyphicon glyphicon-warning-sign"></span>&nbsp;
-         <li>Min 8 characters</li>
-       <li>Min one small alphabet</li>
-     <li>Min one capital alphabet</li>
-   <li>Min one special character</li>
- <li>Min one digit</li><ul>
-     </div>
-     <div ng-show="registrationform.password.$error.pattern && !passwordfocus && registrationform.password.$touched">
-       <ul class="alert alert-danger" style="color:brown"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;
-         <li>Min 8 characters</li>
-        <li>Min one small alphabet</li>
-      <li>Min one capital alphabet</li>
-    <li>Min one special character</li>
-  <li>Min one digit</li><ul>
-     </div>
-     <div ng-show="registrationform.password.$touched && !passwordfocus && registrationform.password.$error.required">
-       <p class="alert alert-danger" style="color:brown"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;Enter Username</p>
-     </div>
+      <input type="password" class="form-control" id="conformpassword" name="conformpassword" ng-model="regCtrl.account.cpassword" valid-password-c="regCtrl.account.password"   placeholder="Conform Password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,10}">
+      <div ng-show="registrationform.conformpassword.$error.noMatch && registrationform.conformpassword.$touched">
+        <p class="alert alert-danger" style="color:brown"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;Password and Conform password should be same</p>
+      </div>
     </fieldset>
     <button type="submit" class="btn btn-primary btn-lg btn-block">Sign Up</button>
   </form>

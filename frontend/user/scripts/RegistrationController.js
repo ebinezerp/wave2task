@@ -7,5 +7,11 @@ RegistrationModule.controller('RegistrationController',function(){
 var regCtrl=this;
 
   regCtrl.account={};
+  regCtrl.conform=false;
+
+  regCtrl.register=function()
+  {
+    console.log(regCtrl.account);
+  }
 
 })
