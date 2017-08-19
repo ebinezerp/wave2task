@@ -66,7 +66,7 @@
     </fieldset>
     <fieldset class="form-group">
 
-      <input type="text" class="form-control" name="username" ng-model="regCtrl.account.username" ng-focus="usernamefocus=true" ng-blur="usernamefocus=false" id="username" placeholder="Username" required pattern="[a-z]{8,}">
+      <input type="text" class="form-control" name="username" ng-model="regCtrl.account.userName" ng-focus="usernamefocus=true" ng-blur="usernamefocus=false" id="username" placeholder="Username" required pattern="[a-z]{8,}">
 
              <div ng-show="usernamefocus && !registrationform.username.$error.pattern && registrationform.username.$error.required">
               <p class="alert alert-info" style="color:black"><span class="glyphicon glyphicon glyphicon-info-sign"></span>&nbsp;case sensitive: Enter only small alphabet</p>

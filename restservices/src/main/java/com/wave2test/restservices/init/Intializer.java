@@ -1,8 +1,11 @@
 package com.wave2test.restservices.init;
 
+import javax.servlet.Filter;
+
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import com.wave2test.restservices.config.WebMvcConfig;
+import com.wave2test.restservices.filter.CORSFilter;
 
 public class Intializer extends AbstractAnnotationConfigDispatcherServletInitializer{
 
@@ -25,7 +28,11 @@ public class Intializer extends AbstractAnnotationConfigDispatcherServletInitial
 	}
 	
 	
-	
+	@Override
+	protected Filter[] getServletFilters() {
+		// TODO Auto-generated method stub
+		return new Filter[]{new CORSFilter()};
+	}
 	
 
 }
