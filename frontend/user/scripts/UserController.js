@@ -13,6 +13,7 @@ UserModule.controller('UserController',function(UserService,$cookieStore,$locati
         {
           alert(success);
           $cookieStore.remove('currentUser');
+          $location.path('/login')
 
         },
         function(error) {

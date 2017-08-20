@@ -103,7 +103,7 @@ public class UserController {
 		try{
 		session.removeAttribute("username");
 		session.invalidate();
-		return new ResponseEntity<Boolean>(true,HttpStatus.FORBIDDEN);
+		return new ResponseEntity<Boolean>(true,HttpStatus.OK);
 		}catch (Exception e) {
 			// TODO: handle exception
 			
