@@ -49,7 +49,7 @@
       </div>
     </fieldset>
     <fieldset class="form-group">
-    <input type="text" name="mobilenumber" id="mobile" placeholder="Mobile" ng-focus="mobilenumberfocus=true" ng-model="regCtrl.account.mobile" ng-blur="mobilenumberfocus=false" required pattern="[0-9]{10}" class="form-control">
+    <input type="text" name="mobilenumber" id="mobile" placeholder="Mobile" ng-focus="mobilenumberfocus=true" ng-model="regCtrl.account.mobile" ng-blur="mobilenumberfocus=false" required pattern="^[789]\d{9}$" class="form-control">
 
        <div ng-show="mobilenumberfocus && !registrationform.mobilenumber.$error.pattern && registrationform.mobilenumber.$error.required">
         <p class="alert alert-info" style="color:black"><span class="glyphicon glyphicon glyphicon-info-sign"></span>&nbsp;Exampe: 9494216610</p>
